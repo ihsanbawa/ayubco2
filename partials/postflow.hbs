@@ -1,0 +1,24 @@
+{{! Partial: Post Flow }}
+
+<section class="postflow">
+    <div class="postflow-logo">
+        {{!-- {{#if @site.logo}}
+            <a href="{{@site.url}}" data-swup-preload>
+                <img src="{{@site.logo}}" alt="{{@site.title}}"/>
+            </a>
+        {{/if}} --}}
+        <a href="{{@site.url}}" data-swup-preload>
+            <div></div>
+            <div></div>
+        </a>
+    </div>
+    <div class="postflow-info wrapper">
+        <div class="postflow-current">{{t "Introduction"}}</div>
+        <div class="postflow-title">{{title}}</div>
+        {{!-- <div class="postflow-readtime" data-percent="40">
+            <div class="postflow-readtime-progress">
+                <div class="postflow-readtime-progress-fill"></div>
+            </div>
+        </div> --}}
+    </div>
+</section>

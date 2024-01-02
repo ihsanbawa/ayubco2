@@ -1,0 +1,145 @@
+/*------------------------------------------------------------------
+    Component: Post Cover
+-------------------------------------------------------------------*/
+
+.postcover {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: $white;
+    align-self: center;
+
+    &__short {
+        height: 60vh;
+    }
+
+    @media (max-width: 880px) {
+        min-height: 780px;
+    }
+
+    @media (max-width: 720px) {
+        min-height: 600px;
+        max-height: 85vh;
+        // padding-bottom: 10%;
+
+        // align-items: flex-end;
+    }
+
+    @media (max-width: 480px) {
+        min-height: 460px;
+    }
+}
+
+.postcover-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba($black,.2);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    animation: fade 3s ease-out 1.5s forwards;
+    // background-blend-mode: overlay;
+
+    // @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    //     opacity: 0.5;
+    // }
+}
+
+.postcover-arrow {
+    position: absolute;
+    right: 80px;
+    bottom: 78px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+
+    svg {
+        width: 34px;
+        height: 34px;
+        animation: bounce 3s infinite;
+        color: $white;
+        color: rgba($white, 0.6);
+    }
+
+    &:hover {
+        svg {
+            color: rgba($white, 1);
+        }
+    }
+
+    @media (max-width: 720px) {
+        display: none;
+    }
+}
+
+.postcover .postheader {
+    text-align: center;
+    margin-bottom: 0;
+
+    .postheader-title {
+        color: $black;
+        margin-top: -1.5ex;
+    }
+
+    .postheader-category {
+        color: rgba($white, 0.6);
+
+        a:hover {
+            color: rgba($white, 1);
+        }
+    }
+
+    .postmeta {
+        color: $primary;
+        mix-blend-mode: color-dodge;
+
+        a {
+            text-decoration: none;
+            color: $primary;
+        }
+    }
+
+    .postmeta-avatar {
+        display: none;
+    }
+
+    @media (max-width: 1580px) {
+        .postmeta-avatar {
+            display: inline-block;
+        }
+    }
+}
+
+.postcover .postinfo {
+    position: relative;
+    top: 0;
+
+    .postinfo-inner {
+        &:after {
+            background-color: rgba($black, 0.25);
+        }
+    }
+
+    .postinfo-name {
+        color: $white;
+    }
+
+    .postinfo-bio {
+        color: $white;
+    }
+
+    .postinfo-social-item {
+        color: rgba($white, 0.65);
+
+        &:hover {
+            svg {
+                color: rgba($white, 1);
+            }
+        }
+    }
+}

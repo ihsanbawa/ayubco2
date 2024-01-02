@@ -1,0 +1,41 @@
+/*------------------------------------------------------------------
+    Layout: Header
+-------------------------------------------------------------------*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    &__overlay {
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .navigation-button {
+            .navigation-icon__active:after {
+                background: $white;
+            }
+
+            .navigation-icon__active:before {
+                background: $white;
+            }
+
+            &:hover {
+                .navigation-icon,
+                .navigation-icon:after,
+                .navigation-icon:before {
+                    background: $white;
+                }
+
+                .navigation-icon__active {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

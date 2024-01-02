@@ -1,0 +1,116 @@
+/*------------------------------------------------------------------
+    Component: Subscribe
+-------------------------------------------------------------------*/
+
+.subscribe {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 78px;
+    text-align: left;
+    margin-bottom: 60px;
+
+    align-items: baseline;
+    justify-content: space-between;
+
+    @media (max-width: 720px) {
+        padding-bottom: 58px;
+        flex-direction: column;
+    }
+
+    @media (max-width: 480px) {
+        padding-bottom: 48px;
+    }
+}
+
+.subscribe-title {
+    font-size: 28px;
+    margin: 0 0 36px;
+    color: $black;
+
+    @media (max-width: 720px) {
+        font-size: 24px;
+        margin: 0 0 28px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 22px;
+        margin: 0 0 24px;
+    }
+}
+
+.subscribe-description {
+    font-family: $font_subheader;
+    font-size: 17px;
+    line-height: 34px;
+    max-width: 485px;
+    margin: 0 0 48px;
+    color: $black;
+
+    @media (max-width: 720px) {
+        font-size: 16px;
+        line-height: 34px;
+        margin: 0 0 38px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 15px;
+        line-height: 28px;
+        margin: 0 0 34px;
+    }
+}
+
+.subscribe-form {
+    position: relative;
+    max-width: 450px;
+    &.subscribe-form__success {
+        input {
+            border-color: green;
+        }
+        input::placeholder {
+            color: green;
+        }
+    }
+    * {
+        transition: .3s $timing all;
+    }
+}
+
+.subscribe-input {
+    // margin: 0 0 28px;
+}
+
+.subscribe-submit {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: $black;
+    background-color: transparent;
+
+    svg {
+        transition: transform 0.2s ease-out;
+    }
+
+    &__success {
+        color: green;
+    }
+
+    &:hover {
+        svg {
+            margin-left: 10px;
+            transform: translate(3px, 0);
+        }
+    }
+}
+
+.subscribe-rss {
+    font-size: 15px;
+    margin: 0;
+    color: $black;
+
+    @media (max-width: 720px) {
+        font-size: 14px;
+    }
+}

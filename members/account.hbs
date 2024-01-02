@@ -1,0 +1,16 @@
+{{! Template: Members - Account }}
+{{!< ../default}}
+
+<div class="wrapper">
+
+    <main class="page page--center page--full-height">
+
+        {{#if @member}}
+            {{> account}}
+        {{else}}
+            <script>window.location = '{{@site.url}}/signin/';</script>
+        {{/if}}
+
+    </main>
+
+</div>

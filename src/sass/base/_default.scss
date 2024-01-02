@@ -1,0 +1,182 @@
+#map {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 100;
+    opacity: 1;
+    transition: 1s ease opacity;
+    &:not(.visible) {
+        opacity: 0;
+    }
+    @media (max-width: 1079px) {
+        display: none;
+    }
+}
+
+/*------------------------------------------------------------------
+    Animations: SWUP
+-------------------------------------------------------------------*/
+
+.transition-fade {
+    transition: 0.5s $timing transform,
+                1s ease opacity;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transition: 0.5s $timing opacity,
+                3s ease transform;
+}
+
+/*------------------------------------------------------------------
+    Animations: Homepage
+-------------------------------------------------------------------*/
+
+$initialDelay: 0s;
+
+.wipe {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    background: $black;
+    animation:
+        wipe1 .3s $timing $initialDelay forwards,
+        wipe2 .3s $timing $initialDelay+.8s forwards;
+}
+
+body.home-template {
+    section:not(.about), article, footer, .about *:not(img) {
+        position: relative;
+        z-index: 1;
+        transform: matrix(1, 0.2, -0.2, 1, 48, 200);
+        opacity: 0;
+        animation:
+            up 0.5s $timing forwards,
+            fade 1s ease forwards;
+    }
+    .about {
+        background: $black;
+        color: $white;
+        transform: scaleY(0) scaleX(1.2) skewY(30deg);
+        opacity: 0;
+        animation:
+            up2 1s $timing forwards,
+            fade .5s ease forwards;
+        animation-delay: ($initialDelay + 1s);
+        margin-bottom: 80px;
+        img {
+            width: 33vw;
+            position: absolute;
+            right: 0;
+            top: -10vw;
+            opacity: 0;
+            animation: fade 5s $timing 2s forwards;
+        }
+        h2 { animation-delay: $initialDelay + 1.1s }
+        h4 { 
+            animation-delay: $initialDelay + 1.2s;
+            text-transform: uppercase;
+            max-width: 340px;
+        }
+        p { max-width: 760px }
+        p:nth-of-type(1) { animation-delay: $initialDelay + 1.3s }
+        p:nth-of-type(2) { animation-delay: $initialDelay + 1.35s}
+        p:nth-of-type(3) { animation-delay: $initialDelay + 1.4s }
+    }
+    .projects {
+        animation-delay: $initialDelay + 1.4s;
+        article {
+            &:nth-of-type(1) { animation-delay: $initialDelay + 1.5s }
+            &:nth-of-type(2) { animation-delay: $initialDelay + 1.6s }
+            &:nth-of-type(3) { animation-delay: $initialDelay + 1.7s }
+            &:nth-of-type(4) { animation-delay: $initialDelay + 1.8s }
+            &:nth-of-type(5) { animation-delay: $initialDelay + 1.9s }
+            &:nth-of-type(6) { animation-delay: $initialDelay + 2.0s }
+        }
+    }
+    .postlist {
+        animation-delay: $initialDelay + 1.9s;
+        article {
+            &:nth-of-type(1) { animation-delay: $initialDelay + 2.0s }
+            &:nth-of-type(2) { animation-delay: $initialDelay + 2.1s }
+            &:nth-of-type(3) { animation-delay: $initialDelay + 2.2s }
+            &:nth-of-type(4) { animation-delay: $initialDelay + 2.3s }
+        }
+    }
+    .subscribe { animation-delay: $initialDelay + 2.4s }
+    .footer { animation-delay: $initialDelay + 2.5s }
+}
+
+
+/*------------------------------------------------------------------
+    Base: Default
+-------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    transition-delay: 0s;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+    transition-property: text-decoration, color, background-color, border-color, transform, opacity;
+}
+
+html,
+body {
+    font-family: $font_body;
+    font-size: 18px;
+    font-weight: 400;
+    height: 100%;
+    margin: 0;
+    color: $black;
+    background: $white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: underline;
+    color: currentColor;
+
+    text-decoration-color: transparent;
+
+    &:hover {
+        outline: none;
+
+        text-decoration-color: currentColor;
+        &.underlined {
+            text-decoration-color: transparent;
+        }
+    }
+
+    &.underlined {
+        outline: none;
+        text-decoration-color: currentColor;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font_header;
+}
+
+::selection {
+    background: $secondary;
+}
+
+::-moz-selection {
+    background: $secondary;
+}

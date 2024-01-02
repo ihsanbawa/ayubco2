@@ -1,0 +1,20 @@
+{{! Partial: Post Main }}
+
+<div class="post-main">
+    {{#if access}}
+        <div class="post-contents">
+            {{content}}
+        </div>
+    {{else}}
+        <div class="post-contents">
+            <p>
+                {{#if custom_excerpt}}
+                    {{excerpt}}
+                {{else}}
+                    {{excerpt words="45"}}...
+                {{/if}}
+            </p>
+        </div>
+        {{> "post-upgrade"}}
+    {{/if}}
+</div>

@@ -1,0 +1,14 @@
+{{! Partial: Post List }}
+
+<section class="postlist">
+
+    {{#get "posts" filter="featured:true" limit="all"}}
+        {{#if posts}}
+        <h1>Thinking</h1>
+            {{#foreach posts}}
+                {{> postitem}}
+            {{/foreach}}
+        {{/if}}
+    {{/get}}    
+
+</section>

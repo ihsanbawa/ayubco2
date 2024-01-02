@@ -1,0 +1,15 @@
+{{! Partial: Blog Title }}
+
+<div class="blogtitle">
+    {{#if @site.logo}}
+        <a class="blogtitle-logo" href="{{@site.url}}" data-swup-preload>
+            <img src="{{@site.logo}}" alt="{{@site.title}}"/>
+        </a>
+    {{else}}
+        <h1 class="blogtitle-header"><a href="{{@site.url}}" data-swup-preload>{{@site.title}}</a></h1>
+    {{/if}}
+    {{!-- <a class="blogtitle-logo" href="{{@site.url}}" data-swup-preload>
+        <img width="100" height="100" src="/content/images/2019/07/Monogram.svg" alt="{{@site.title}}">
+    </a> --}}
+    
+</div>

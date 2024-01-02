@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+    Post Contents: Inline
+-------------------------------------------------------------------*/
+
+.postcontents {
+    a {
+        font-weight: 600;
+        color: $primary;
+        text-decoration-color: $primary;
+
+        &:hover {
+            text-decoration-color: transparent;
+        }
+    }
+
+    code {
+        font-family: $font_code;
+        font-size: 16px;
+        font-weight: 600;
+        display: inline-block;
+        margin: 0 5px;
+        padding: 0 8px;
+        color: $black;
+        background: $black;
+
+        @media (max-width: 720px) {
+            font-size: 15px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+        }
+    }
+
+    mark {
+        color: $black;
+        background-color: $black;
+    }
+}

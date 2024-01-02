@@ -1,0 +1,62 @@
+{{! Template: Index }}
+{{!< default}}
+
+<div class="wipe"></div>
+
+<div class="transition-fade" id="">
+
+    <main class="page">
+
+        <section class="about" id="1">
+            <h2>Bilal Ayub</h2>
+            {{!-- {{#if @site.description}} --}}
+                {{!-- <h4>{{@site.description}}</h4> --}}
+            {{!-- {{/if}} --}}
+            <h4>
+                A <span class="primary">product</span> <span class="strikethrough">leader</span> <span class="strikethrough">designer</span> <span class="strikethrough">marketer</span> <span class="strikethrough">developer</span> <span class="primary">person</span> concerned with the spaces between the stack.
+            </h4>
+
+            <img src="{{@site.cover_image}}">
+            <!--img src="https://desk.ayub.co/content/images/2019/08/profile--optim.jpeg"-->
+            <p>
+                I believe that your ideal brand exists; it’s perfect, it’s complete, and it’s utterly unattainable. The pixels, the copywriting, market positioning, and the experience of your users are all implementation — and implementation is just an approximation of your perfect brand.
+            </p>
+            <p>
+                The pixels, the copywriting, market positioning, the experience of your users, and the needs of your operation are all implementation — and implementation is just an approximation of your perfect brand. To get a better approximation, you need someone that understands the breadth of what goes into your business strategy.
+            </p>
+            <p>
+                When not working: catch me playing chess with my wife, developing 35mm film, or learning how to sail a square-rigged barque. If you’re in or around Texas, <a class="underlined" href="mailto:bilal@ayub.co">let’s grab coffee</a>.
+            </p>
+        </section>
+
+        <section class="projects" id="2">
+
+        {{#get "pages" filter="featured:true" limit="all" order="published_at desc"}}
+            {{#if pages}}
+            <h1>Doing</h1>
+                {{#foreach pages}}
+                    <article class="postitem">
+                        <h2 class="postitem-title">
+                            <a href="{{url}}" data-swup-preload>{{title}}</a>
+                        </h2>
+                        <div class="postmeta">
+                            <span class="postmeta-published"><a href="{{url}}">{{excerpt}}</a></span>
+                        </div>
+                    </article>
+                    <hr>
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
+
+
+        </section>
+
+        {{!-- {{> bloginfo}} --}}
+
+        {{> postlist}}
+
+        {{!-- {{pagination}} --}}
+
+    </main>
+
+</div>

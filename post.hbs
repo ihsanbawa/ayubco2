@@ -1,0 +1,45 @@
+{{! Template: Post }}
+{{!< default}}
+
+{{#post}}
+
+    <canvas id="map" class="visible">
+    </canvas>
+
+    <main class="page transition-fade" id="swup">
+
+        {{!-- {{> postreadingtime}} --}}
+        {{#match @page.show_title_and_feature_image}}
+            <article class="post {{#if feature_image}}post-featured{{/if}}">
+
+                {{#if feature_image}}
+                    {{> postcover}}
+                {{/if}}
+
+                {{> postflow}}
+
+                <div class="wrapper">
+
+                    {{^if feature_image}}
+                        {{> postheader}}
+                    {{/if}}
+
+                    {{> postmain}}
+
+                </div>
+
+            </article>
+        {{else}}
+
+            <article class="post">
+                <div class="wrapper">
+                    {{> postmain}}
+                </div>
+            </article>
+
+        {{/match}}
+
+    </main>
+
+
+{{/post}}

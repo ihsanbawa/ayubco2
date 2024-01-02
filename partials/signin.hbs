@@ -1,0 +1,30 @@
+{{! Partial: Sign-In }}
+
+<form class="signin" data-members-form="signin">
+    <h1 class="signin__header">{{t "Welcome Back!"}}</h1>
+    <p class="signin__description">{{t "Sign into your account again for full access."}}</p>
+    <div class="signin__box">
+        <label class="signin__label" for="email">
+            <span>{{t "Email Address"}}</span>
+            <input name="email" class="signin__email" data-members-email type="email" placeholder="{{t "Type your email..."}}" required="true" autocomplete="false" />
+        </label>
+        <button class="signin__button" type="submit" aria-label="{{t "Sign In"}}">
+            <span class="signin__continue">
+                <svg class="svg-icon svg-icon-stroke svg-icon-arrow-right-circle">
+                    <use xlink:href="{{asset "svg/icons.svg"}}#arrow-right-circle"></use>
+                </svg>
+            </span>
+        </button>
+    </div>
+    <div class="signin__message signin__message--success">
+        <p>{{t "Check your inbox and click the link to complete signin."}}</p>
+    </div>
+    <div class="signin__message signin__message--error">
+        <p><strong>{{t "Please enter a valid email address!"}}</strong></p>
+    </div>
+    {{#if price.monthly}}
+        <p class="signin__signup">{{t "Don't have an account yet?"}} <a href="/membership/">{{t "Become a Member"}}</a>.</p>
+    {{else}}
+        <p class="signin__signup">{{t "Don't have an account yet?"}} <a href="/subscribe/">{{t "Become a Subscriber"}}</a>.</p>
+    {{/if}}
+</form>

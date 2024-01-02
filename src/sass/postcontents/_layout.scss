@@ -1,0 +1,19 @@
+/*------------------------------------------------------------------
+    Post Contents: Standard
+-------------------------------------------------------------------*/
+
+.postcontents {
+    * {
+        max-width: 100%;
+    }
+
+    & > .kg-post > *:first-child,
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > .kg-post > *:first-child,
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}
